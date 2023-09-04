@@ -3,12 +3,13 @@ using ClockInAppLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClockInAppLibrary.Data
 {
-    public class SqlData
+    public class SqlData : IDatabaseData
     {
         private readonly ISqlDataAccess _db;
         private const string connectionStringName = "SqlDb";
@@ -17,12 +18,39 @@ namespace ClockInAppLibrary.Data
         {
             _db = db;
         }
-        public List<EmployeeModel> GetEmployees()
+        //public List<EmployeeModel> GetEmployees()
+        //{
+        //    return _db.LoadData<EmployeeModel, dynamic>("dbo.spEmployees_GetAll",
+        //                                        new { },
+        //                                        connectionStringName,
+        //                                        true);
+        //}
+
+        public (EmployeeModel, bool isClockedIn) LoginToPortal(string ePin)
         {
-            return _db.LoadData<EmployeeModel, dynamic>("dbo.spEmployees_GetAll",
-                                                new { },
-                                                connectionStringName,
-                                                true);
+            EmployeeModel employee = _db.LoadData<EmployeeModel, dynamic>("dbo.spEmployees_GetByPin",
+                new { pin = ePin },
+                connectionStringName,
+                true).First();
+
+            bool isClockedIn = employee.IsClockedIn;
+            return (employee, isClockedIn);
+        }
+
+        public void StartShifTime(int employeeId)
+        {
+            _db.SaveData("dbo.spShiftTimes_StartShift",
+                new { employeeId },
+                connectionStringName,
+                true);
+        }
+
+        public void StopShifTime(int employeeId)
+        {
+            _db.SaveData("dbo.spShiftTimes_StopShift",
+                new { employeeId },
+                connectionStringName,
+                true);
         }
 
         //// Create a new booking

@@ -4,3 +4,11 @@
 }
 <h1 class="head text-center">Welcome to the Employee Portal.</h1>
 <p class="text-center">Clock in and Clock out using the button below.</p>
+
+@if(Model.Employee.IsClockedIn){
+    <button>Clock Out</button>
+}
+
+@if(!Model.Employee.IsClockedIn){
+    <button>Clock In</button>
+}

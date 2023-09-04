@@ -20,8 +20,12 @@ namespace ClockInApp.Web.Pages
         {
 
         }
-        //public IActionResult OnPost()
-        //{
-        //}
+        public IActionResult OnPost()
+        {
+            return RedirectToPage(new
+            {
+                EmployeePin
+            });
+        }
     }
 }

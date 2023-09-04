@@ -1,0 +1,14 @@
+﻿@page
+@model ClockInApp.Web.Pages.EmployeeLoginModel
+@{
+}
+
+<h1 class="head text-center">Welcome to the Login Page.</h1>
+<p class="text-center">Enter your Employee Pin to login.</p>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.EmployeePin">Employee Pin</label>
+        <input asp-for="@Model.EmployeePin"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

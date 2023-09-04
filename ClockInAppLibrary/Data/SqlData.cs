@@ -12,7 +12,7 @@ namespace ClockInAppLibrary.Data
     public class SqlData : IDatabaseData
     {
         private readonly ISqlDataAccess _db;
-        private const string connectionStringName = "SqlDb";
+        private const string connectionStringName = "Default";
 
         public SqlData(ISqlDataAccess db)
         {

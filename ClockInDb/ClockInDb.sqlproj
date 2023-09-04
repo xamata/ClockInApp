@@ -67,6 +67,8 @@
     <Build Include="dbo\Tables\ShiftTimes.sql" />
     <Build Include="dbo\Stored Procedures\spEmployees_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\spEmployees_GetByPin.sql" />
+    <Build Include="dbo\Stored Procedures\spShiftTimes_StartShift.sql" />
+    <Build Include="dbo\Stored Procedures\spShiftTimes_StopShift.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profiles\ClockInDb.publish.xml" />

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClockInAppLibrary", "ClockI
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ClockInDb", "ClockInDb\ClockInDb.sqlproj", "{2BCAB432-FCBF-44CD-B9CF-9031F18C7D75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClockInApp.Web", "ClockInApp.Web\ClockInApp.Web.csproj", "{A030524D-3667-46B8-9573-D004DBA691B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{2BCAB432-FCBF-44CD-B9CF-9031F18C7D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BCAB432-FCBF-44CD-B9CF-9031F18C7D75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2BCAB432-FCBF-44CD-B9CF-9031F18C7D75}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A030524D-3667-46B8-9573-D004DBA691B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A030524D-3667-46B8-9573-D004DBA691B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A030524D-3667-46B8-9573-D004DBA691B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A030524D-3667-46B8-9573-D004DBA691B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

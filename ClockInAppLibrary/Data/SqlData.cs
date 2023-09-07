@@ -18,23 +18,22 @@ namespace ClockInAppLibrary.Data
         {
             _db = db;
         }
-        //public List<EmployeeModel> GetEmployees()
+        //public List<EmployeeModel> GetEmployeesPin()
         //{
-        //    return _db.LoadData<EmployeeModel, dynamic>("dbo.spEmployees_GetAll",
+        //    return _db.LoadData<EmployeeModel, dynamic>("dbo.spEmployees_GetAllPins",
         //                                        new { },
         //                                        connectionStringName,
         //                                        true);
         //}
 
-        public (EmployeeModel, bool isClockedIn) LoginToPortal(string ePin)
+        public EmployeeModel LoginToPortal(string ePin)
         {
             EmployeeModel employee = _db.LoadData<EmployeeModel, dynamic>("dbo.spEmployees_GetByPin",
                 new { pin = ePin },
                 connectionStringName,
                 true).First();
 
-            bool isClockedIn = employee.IsClockedIn;
-            return (employee, isClockedIn);
+            return employee;
         }
 
         public void StartShifTime(int employeeId)

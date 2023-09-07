@@ -10,6 +10,7 @@ namespace ClockInApp.Web.Pages
         private readonly IDatabaseData _db;
         [BindProperty]
         public EmployeeModel Employee { get; set; }
+
         [BindProperty(SupportsGet = true)]
         public string EmployeePin { get; set; }
 
@@ -19,10 +20,7 @@ namespace ClockInApp.Web.Pages
         }
         public void OnGet()
         {
-            if(EmployeePin != null) 
-            { 
-            (Employee, Employee.IsClockedIn) = _db.LoginToPortal(EmployeePin);
-            }
+            
         }
     }
 }

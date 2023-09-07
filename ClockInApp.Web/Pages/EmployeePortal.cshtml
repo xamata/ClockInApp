@@ -6,9 +6,9 @@
 <p class="text-center">Clock in and Clock out using the button below.</p>
 
 @if(Model.Employee.IsClockedIn){
-    <button>Clock Out</button>
+    <button class="btn-primary align-content-center">Clock Out</button>
 }
 
 @if(!Model.Employee.IsClockedIn){
-    <button>Clock In</button>
+    <button class="btn-primary">Clock In</button>
 }

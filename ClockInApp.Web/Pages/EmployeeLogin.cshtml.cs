@@ -11,21 +11,12 @@ namespace ClockInApp.Web.Pages
 
         [BindProperty]
         public string EmployeePin { get; set; }
-        public EmployeeModel Employee { get; set; }
         public EmployeeLoginModel(IDatabaseData db)
         {
             _db = db;
         }
         public void OnGet()
         {
-
-        }
-        public IActionResult OnPost()
-        {
-            return RedirectToPage(new
-            {
-                EmployeePin
-            });
         }
     }
 }

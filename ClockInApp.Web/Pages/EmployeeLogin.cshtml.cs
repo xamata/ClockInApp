@@ -10,7 +10,7 @@ namespace ClockInApp.Web.Pages
         private readonly IDatabaseData _db;
 
         [BindProperty]
-        public string EmployeePin { get; set; }
+        public string EmployeePin { get; set; } = "0000";
         public EmployeeLoginModel(IDatabaseData db)
         {
             _db = db;

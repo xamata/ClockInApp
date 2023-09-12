@@ -1,6 +1,7 @@
 ﻿@page
 @model ClockInApp.Web.Pages.EmployeeLoginModel
 @{
+
 }
 
 <h1 class="head text-center">Welcome to the Login Page.</h1>
@@ -10,9 +11,15 @@
         <label asp-for="@Model.EmployeePin">Employee Pin</label>
         <input asp-for="@Model.EmployeePin"/>
     </div>
-    <a class="btn btn-primary"
+    <a name="pinSubmit"
+        onclick="SubmitPin(@Model.EmployeePin)"
+        class="btn btn-primary"
+       asp-route-employeePin="@Model.EmployeePin"
        asp-page="/EmployeePortal"
-       asp-route-employeePin="@Model.EmployeePin">LOGIN</a>
+       >LOGIN</a>
+@*     <button type="submit" class="btn btn-danger"
+     asp-page="/EmployeePortal"
+     asp-route="@Model.EmployeePin">LOGIN</button>*@
 </form>
 
 @*@if(Model.WrongPin == true){

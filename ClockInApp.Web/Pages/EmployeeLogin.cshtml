@@ -1,7 +1,7 @@
 ﻿@page
 @model ClockInApp.Web.Pages.EmployeeLoginModel
 @{
-
+    
 }
 
 <h1 class="head text-center">Welcome to the Login Page.</h1>
@@ -12,9 +12,8 @@
         <input asp-for="@Model.EmployeePin"/>
     </div>
     <a name="pinSubmit"
-        onclick="SubmitPin(@Model.EmployeePin)"
         class="btn btn-primary"
-       asp-route-employeePin="@Model.EmployeePin"
+       asp-route-employeePin="@Model.EmployeePin"   
        asp-page="/EmployeePortal"
        >LOGIN</a>
 @*     <button type="submit" class="btn btn-danger"

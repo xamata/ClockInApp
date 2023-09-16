@@ -18,5 +18,9 @@ namespace ClockInApp.Web.Pages
         public void OnGet()
         {
         }
+
+        public IActionResult OnPost(){
+            return RedirectToPage("EmployeePortal","EmployeePin", new {EmployeePin});
+        }
     }
 }

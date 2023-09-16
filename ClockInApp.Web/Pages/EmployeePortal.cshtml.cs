@@ -20,7 +20,6 @@ namespace ClockInApp.Web.Pages
         }
         public void OnGet()
         {
-            
          }
     }
 }

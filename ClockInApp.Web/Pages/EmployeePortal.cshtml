@@ -2,13 +2,15 @@
 @model ClockInApp.Web.Pages.EmployeePortalModel
 @{
 }
-<h1 class="head text-center">Welcome to the Employee Portal.</h1>
+<h1 class="head text-center">Welcome to the Employee Portal,</h1>
+<h1 class="head text-center">@Model.Employee.FirstName @Model.Employee.LastName.</h1>
 <p class="text-center">Clock in and Clock out using the button below.</p>
-<h3>The employee pin is @Model.EmployeePin</h3>
-@*@if(Model.Employee.IsClockedIn){
-    <button class="btn-primary align-content-center">Clock Out</button>
-}
+<h3>The employee pin is @Model.EmployeePin.</h3>
 
+@if (Model.Employee.IsClockedIn)
+{
+    <button class="btn btn-primary">Clock Out</button>
+}
 @if(!Model.Employee.IsClockedIn){
-    <button class="btn-primary">Clock In</button>
-}*@
+    <button type="button" class="btn btn-primary" onclick="ClockInBtn_Click()">Clock In</button>
+}*

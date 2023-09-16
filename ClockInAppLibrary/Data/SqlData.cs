@@ -42,6 +42,11 @@ namespace ClockInAppLibrary.Data
                 new { employeeId },
                 connectionStringName,
                 true);
+
+            _db.SaveData("dbo.spShiftTimes_ClockedIn",
+                new { employeeId },
+                connectionStringName,
+                true);
         }
 
         public void StopShifTime(int employeeId)
@@ -50,6 +55,11 @@ namespace ClockInAppLibrary.Data
                 new { employeeId },
                 connectionStringName,
                 true);
+
+            _db.SaveData("dbo.spShiftTimes_ClockedOut",
+               new { employeeId },
+               connectionStringName,
+               true);
         }
 
         //// Create a new booking

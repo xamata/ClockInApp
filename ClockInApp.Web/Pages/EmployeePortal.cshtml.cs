@@ -20,6 +20,13 @@ namespace ClockInApp.Web.Pages
         }
         public void OnGet()
         {
-         }
+            Employee = _db.LoginToPortal(EmployeePin);
+        }
+
+        void ClockInBtn_Click()
+        {
+            //_db.StartShifTime(Employee.Id);
+            Page();
+        }
     }
 }

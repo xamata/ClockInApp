@@ -68,11 +68,16 @@
     <Build Include="dbo\Stored Procedures\spEmployees_GetByPin.sql" />
     <Build Include="dbo\Stored Procedures\spShiftTimes_StartShift.sql" />
     <Build Include="dbo\Stored Procedures\spShiftTimes_StopShift.sql" />
+    <Build Include="dbo\Stored Procedures\spShiftTimes_ClockedIn.sql" />
+    <Build Include="dbo\Stored Procedures\spShiftTimes_ClockedOut.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profiles\ClockInDb.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ClockInDb.refactorlog" />
   </ItemGroup>
 </Project>

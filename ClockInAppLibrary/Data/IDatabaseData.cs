@@ -5,7 +5,7 @@ namespace ClockInAppLibrary.Data
     public interface IDatabaseData
     {
         EmployeeModel LoginToPortal(string ePin);
-        void StartShifTime(int employeeId);
-        void StopShifTime(int employeeId);
+        void StartShifTime(int employeeId, DateTime startTime);
+        void StopShifTime(int employeeId, DateTime endTime);
     }
 }

@@ -36,10 +36,10 @@ namespace ClockInAppLibrary.Data
             return employee;
         }
 
-        public void StartShifTime(int employeeId)
+        public void StartShifTime(int employeeId, DateTime startTime)
         {
             _db.SaveData("dbo.spShiftTimes_StartShift",
-                new { employeeId },
+                new { employeeId, startTime},
                 connectionStringName,
                 true);
 
@@ -49,10 +49,10 @@ namespace ClockInAppLibrary.Data
                 true);
         }
 
-        public void StopShifTime(int employeeId)
+        public void StopShifTime(int employeeId, DateTime stopTime)
         {
             _db.SaveData("dbo.spShiftTimes_StopShift",
-                new { employeeId },
+                new { employeeId, stopTime},
                 connectionStringName,
                 true);
 

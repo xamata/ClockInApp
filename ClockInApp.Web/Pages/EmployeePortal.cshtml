@@ -7,10 +7,23 @@
 <p class="text-center">Clock in and Clock out using the button below.</p>
 <h3>The employee pin is @Model.EmployeePin.</h3>
 
-@if (Model.Employee.IsClockedIn)
-{
-    <button class="btn btn-primary">Clock Out</button>
-}
-@if(!Model.Employee.IsClockedIn){
-    <button type="button" class="btn btn-primary" onclick="ClockInBtn_Click()">Clock In</button>
-}*
+<form method="post">
+    @if (Model.Employee.IsClockedIn)
+    {
+        <p>You clocked in at @Model.StartTime</p>
+        <button type="submit" class="btn btn-primary">Clock Out</button>
+    }
+    @if(Model.Employee.IsClockedIn == false)
+    {
+        <p>Your last clock out time was at @Model.EndTime</p>
+        <button type="submit" class="btn btn-primary">Clock INNNNNNNNNNNNNN</button>
+    }
+</form>
+
+
+@*
+TODO: 
+- When i click the Clock in button, It should update the database
+  and what's shown on the page
+- Same for clock out
+*@

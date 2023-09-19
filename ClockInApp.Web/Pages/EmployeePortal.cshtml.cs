@@ -25,11 +25,7 @@ namespace ClockInApp.Web.Pages
             Employee = _db.LoginToPortal(EmployeePin);
         }
 
-        //public IActionResult OnPostClockIn()
-        //{
-        //    return RedirectToPage("EmployeePortal", "EmployeePin", new { EmployeePin });
-        //}
-        public IActionResult OnPost()
+        public IActionResult OnPostClockIn()
         {
             Employee = _db.LoginToPortal(EmployeePin);
             _db.StartShifTime(employeeId: Employee.Id, StartTime);
@@ -41,5 +37,18 @@ namespace ClockInApp.Web.Pages
                 EndTime= EndTime.ToString("YYYY-MM-DD hh:mm:ss")
             });
         }
+        public IActionResult OnPostClockOut()
+        {
+            Employee = _db.LoginToPortal(EmployeePin);
+            _db.StopShifTime(employeeId: Employee.Id, StartTime);
+            //_db.StopShifTime(employeeId: Employee.Id);
+            return RedirectToPage(new
+            {
+                EmployeePin,
+                StartTime = StartTime.ToString("YYYY-MM-DD hh:mm:ss"),
+                EndTime = EndTime.ToString("YYYY-MM-DD hh:mm:ss")
+            });
+        }
     }
 }
+

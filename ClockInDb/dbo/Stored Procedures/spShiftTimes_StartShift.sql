@@ -5,9 +5,6 @@ AS
 begin
 	set nocount on;
 
-	if not exists(select 1 from dbo.ShiftTimes where Id = @employeeId)
-	begin
-		insert dbo.ShiftTimes (StartTime)
-		values (@startTime)
-	end
+	insert dbo.ShiftTimes (EmployeeId, StartTime)
+	values (@employeeId, @startTime);
 end

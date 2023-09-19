@@ -31,6 +31,7 @@ namespace ClockInApp.Web.Pages
         //}
         public IActionResult OnPost()
         {
+            Employee = _db.LoginToPortal(EmployeePin);
             _db.StartShifTime(employeeId: Employee.Id, StartTime);
             //_db.StopShifTime(employeeId: Employee.Id);
             return RedirectToPage(new

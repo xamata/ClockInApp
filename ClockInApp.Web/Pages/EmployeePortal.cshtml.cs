@@ -12,7 +12,7 @@ namespace ClockInApp.Web.Pages
         public EmployeeModel Employee { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public string EmployeePin { get; set; }
+        public string EmployeePin { get; set; } = "0000";
         public DateTime StartTime { get; set; } = DateTime.Now;
         public DateTime EndTime { get; set; } = DateTime.Now;
 
@@ -24,7 +24,24 @@ namespace ClockInApp.Web.Pages
         {
             Employee = _db.LoginToPortal(EmployeePin);
         }
+        public IActionResult OnPost()
+        {
+            Employee = _db.LoginToPortal(EmployeePin);
 
+            if (Employee.IsClockedIn)
+            {
+            _db.StopShifTime(employeeId: Employee.Id, EndTime);
+            }
+            else
+            {
+            _db.StartShifTime(employeeId: Employee.Id, StartTime);
+            }
+            return RedirectToPage(new
+            {
+                EmployeePin,
+                StartTime = StartTime.ToString("YYYY-MM-DD hh:mm:ss")
+            });
+        }
         public IActionResult OnPostClockIn()
         {
             Employee = _db.LoginToPortal(EmployeePin);

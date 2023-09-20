@@ -11,12 +11,12 @@
     @if (Model.Employee.IsClockedIn)
     {
         <p>You clocked in at @Model.StartTime</p>
-        <button asp-page-handler="ClockOut" type="submit" class="btn btn-primary">Clock Out</button>
+        <button type="submit" class="btn btn-primary">Clock Out</button>
     }
     @if(Model.Employee.IsClockedIn == false)
     {
         <p>Your last clock out time was at @Model.EndTime</p>
-        <button asp-page-handler="ClockIn" type="submit" class="btn btn-primary">Clock In</button>
+        <button type="submit" class="btn btn-primary">Clock In</button>
     }
 </form>
 

@@ -14,7 +14,7 @@ namespace ClockInApp.Web.Pages
         [BindProperty(SupportsGet = true)]
         public string EmployeePin { get; set; } = "0000";
         public DateTime StartTime { get; set; } = DateTime.Now;
-        public DateTime EndTime { get; set; } = DateTime.Now;
+        public DateTime StopTime { get; set; } = DateTime.Now;
 
         public EmployeePortalModel(IDatabaseData db)
         {
@@ -30,7 +30,7 @@ namespace ClockInApp.Web.Pages
 
             if (Employee.IsClockedIn)
             {
-            _db.StopShifTime(employeeId: Employee.Id, EndTime);
+            _db.StopShifTime(employeeId: Employee.Id, StartTime, StopTime);
             }
             else
             {
@@ -51,19 +51,19 @@ namespace ClockInApp.Web.Pages
             {
                 EmployeePin,
                 StartTime = StartTime.ToString("YYYY-MM-DD hh:mm:ss"),
-                EndTime= EndTime.ToString("YYYY-MM-DD hh:mm:ss")
+                StopTime = StopTime.ToString("YYYY-MM-DD hh:mm:ss")
             });
         }
         public IActionResult OnPostClockOut()
         {
             Employee = _db.LoginToPortal(EmployeePin);
-            _db.StopShifTime(employeeId: Employee.Id, StartTime);
+            _db.StopShifTime(employeeId: Employee.Id, StartTime, StopTime);
             //_db.StopShifTime(employeeId: Employee.Id);
             return RedirectToPage(new
             {
                 EmployeePin,
                 StartTime = StartTime.ToString("YYYY-MM-DD hh:mm:ss"),
-                EndTime = EndTime.ToString("YYYY-MM-DD hh:mm:ss")
+                EndTime = StopTime.ToString("YYYY-MM-DD hh:mm:ss")
             });
         }
     }

@@ -49,10 +49,10 @@ namespace ClockInAppLibrary.Data
                 true);
         }
 
-        public void StopShifTime(int employeeId, DateTime stopTime)
+        public void StopShifTime(int employeeId,DateTime startTime, DateTime stopTime)
         {
             _db.SaveData("dbo.spShiftTimes_StopShift",
-                new { employeeId, stopTime},
+                new { employeeId, startTime, stopTime},
                 connectionStringName,
                 true);
 

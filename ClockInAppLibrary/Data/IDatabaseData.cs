@@ -6,6 +6,6 @@ namespace ClockInAppLibrary.Data
     {
         EmployeeModel LoginToPortal(string ePin);
         void StartShifTime(int employeeId, DateTime startTime);
-        void StopShifTime(int employeeId, DateTime endTime);
+        void StopShifTime(int employeeId, DateTime startTime, DateTime stopTime);
     }
 }

@@ -8,5 +8,6 @@ begin
 
 	update dbo.ShiftTimes
 	set StopTime = @stopTime
-	where StartTime = @startTime;
+	where EmployeeId = @employeeId
+	and StopTime is null;
 end

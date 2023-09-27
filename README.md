@@ -1,7 +1,7 @@
 # ClockInApp
-The Clock In App allows employees to keep track of their shift clock-in and clock-out times efficiently. This app uses employee PIN codes to log in to their account and a clock-in/clock-out button.
+The Clock In App allows employees to clock into and out of their shifts. Employees must use their employee PIN codes to log in to their Employee Portal. From their portal, the employee is given an option to clock in or out of their shift, depending on their ClockInStatus.
 
-This app demonstrates the foundation of my application-building process in C#. That being a Class Library, Database backend, and a UI frontend. In the future, I will adapt this structure to create apps with added complexity.
+I learned the structure of this application from [Tim Corey's C# MasterCourse](https://www.iamtimcorey.com/courses/csharp-mastercourse/). The basic structure is a Class Library and SQL Database backend with any UI frontend. In the future, I will add features to this structure to create apps with added complexity.
 
 # Usage
 1. Clone the Repository
